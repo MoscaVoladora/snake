@@ -10,13 +10,14 @@ void main() {
     char table[20][10];
     std::vector<short> snake;
     std::vector<short> apple;
+    int score = 0;
     bool bGameOver = false;
     bool start = false;
     tabla(table[0]);
     initialpos(snake);
     //While game is not over execute game loop
     std::cout << "PRESIONA W, A, S o D PARA EMPEZAR A JUGAR" << std::endl;
-    mostrar(table);
+    mostrar(table, score);
     rand_apple(apple);
     while (!bGameOver) {
         if (IsWPressed() || IsAPressed() || IsSPressed() || IsDPressed())
@@ -29,15 +30,16 @@ void main() {
                 {
                     rand_apple(apple);
                 }
-                update_tabla(table[0], snake, apple);
+                update_tabla(table[0], snake, apple, score);
                 //Sleep main thread to control game speed execution
                 std::this_thread::sleep_for(std::chrono::milliseconds(framerate));
-                mostrar(table);
+                mostrar(table, score);
                 if (framerate >= 100)
                 {
                     framerate -= 0.5;
                 }
                 verify_game(table[0], snake, bGameOver, start);
+                score++;
             }
         }
     }

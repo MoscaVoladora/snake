@@ -126,18 +126,21 @@ void rand_apple(std::vector<short>& apple)
 		srand(time(NULL));
 		apple.push_back(rand() % (9 - 1) + 1);
 	}
-	srand(time(NULL));
-	apple[0] = rand() % (19 - 1) + 1;
-	srand(time(NULL));
-	apple[1] = rand() % (9 - 1) + 1;
+	else
+	{
+		srand(time(NULL));
+		apple[0] = rand() % (19 - 1) + 1;
+		srand(time(NULL));
+		apple[1] = rand() % (9 - 1) + 1;
+	}
 }
-void update_tabla(char* tablero, std::vector<short>& snake, std::vector<short> apple)
+void update_tabla(char* tablero, std::vector<short>& snake, std::vector<short> apple, int& score)
 {
 	if (snake[0] == apple[0] && snake[1] == apple[1])
 	{
 		tablero[apple[0] * 10 + apple[1]] = ' ';
 		rand_apple(apple);
-
+		score = score + 15;
 		snake.push_back(snake[snake.size() - 2]);
 		snake.push_back(snake[snake.size() - 1]);
 	}
@@ -181,8 +184,9 @@ void verify_game(char* tablero, std::vector<short> snake, bool& start, bool& gam
 		}
 	}
 }
-void mostrar(char mostrar[20][10])
+void mostrar(char mostrar[20][10], int score)
 {
+	std::cout << "Score: " << score << std::endl;
 	for (int j = 0; j < 10; j++)
 	{
 		for (int i = 0; i < 20; i++)
