@@ -1,14 +1,4 @@
-﻿  game.cpp
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(61,14): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(75,14): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(89,14): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(104,14): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(124,13): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(126,13): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(131,13): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\erics\Desktop\snake\snake_game\game.cpp(133,13): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  main.cpp
-C:\Users\erics\Desktop\snake\snake_game\main.cpp(8,13): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-C:\Users\erics\Desktop\snake\snake_game\main.cpp(39,34): warning C4244: '-=': conversión de 'double' a 'short'; posible pérdida de datos
-  Generando código...
+﻿  main.cpp
+C:\Users\erics\Desktop\snake\snake_game\main.cpp(16,13): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+C:\Users\erics\Desktop\snake\snake_game\main.cpp(67,31): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
   snake_game.vcxproj -> C:\Users\erics\Desktop\snake\snake_game\x64\Debug\snake_game.exe
