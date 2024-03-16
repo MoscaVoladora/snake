@@ -35,11 +35,13 @@ void tabla(char* tablero)
 			//Luego se pones los limites
 			if (i == LIMITEI - UNO || i == ZERO)
 			{
+				//pone el limite de derecha y izquierda
 				tablero[j] = PIPE;
 				tablero[LIMITEI * LIMITEJ - LIMITEJ + j] = PIPE;
 			}
 			else if (j == ZERO || j == LIMITEJ - UNO)
 			{
+				//pone el limite de arriba y abajo
 				tablero[i * LIMITEJ] = GUIONES;
 				tablero[LIMITEJ - UNO + LIMITEJ * i] = GUIONES;
 			}
@@ -234,6 +236,8 @@ void gameOver(char* tablero, std::vector<short> snake, bool& start, bool& gameOv
 				{
 					start = true;
 					gameOver = true;
+					std::cout << std::endl;
+					std::cout << "GAME OVER";
 				}
 			}
 			else if (j == ZERO || j == LIMITEJ - UNO)
@@ -242,8 +246,21 @@ void gameOver(char* tablero, std::vector<short> snake, bool& start, bool& gameOv
 				{
 					start = true;
 					gameOver = true;
+					std::cout << std::endl;
+					std::cout << "GAME OVER";
 				}
 			}
+		}
+	}
+	//bucle que verifica que la serpiente no se coma a si misma
+	for (short i = snake.size() - 1; i >= 2; i -= 2)
+	{
+		if (snake[0] == snake[i - 1] && snake[1] == snake[i])
+		{
+			start = true;
+			gameOver = true;
+			std::cout << std::endl;
+			std::cout << "GAME OVER";
 		}
 	}
 }

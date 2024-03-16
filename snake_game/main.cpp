@@ -5,7 +5,8 @@
 #define appleX 0
 #define appleY 1
 #define FRUTA 'O'
-
+#define ZERO 0
+#define DOS 2
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -23,7 +24,7 @@ void main() {
     std::vector<short> apple;
 
     //guardara la puntuacion del jugador
-    int score = 0;
+    int score = ZERO;
 
     //bool que sera false hasta que finalice el juego
     bool bGameOver = false;
@@ -33,7 +34,7 @@ void main() {
     //Esta funcion crea la tabla vacia
     tabla(table[tableDefault]);
     //Esta funcion mete la posicion inicial del snake
-    initialpos(snake, table[0]);
+    initialpos(snake, table[tableDefault]);
     //funcion que crea una posicion random a la manzana
     rand_apple(apple);
 
@@ -64,7 +65,7 @@ void main() {
                 //Funcion que verifica si se choca contra un limite del mapa
                 gameOver(table[tableDefault], snake, bGameOver, start);
                 //Cada vez que acaba el bucle, suma dependiendo de x que tiene el cuerpo
-                score = score + snake.size() / 2;
+                score = score + snake.size() / DOS;
             }
         }
     }
